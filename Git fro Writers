@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JIRA Query Language for Writers</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1, h2, h3 { color: #2c3e50; }
+    ul { margin-left: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f4f4f4; }
+    code { background: #f0f0f0; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <h1>JIRA Query Language for Writers</h1>
+
+  <h2>1. Fields</h2>
+  <ul>
+    <li><strong>Filter</strong>: Saved filter (e.g., ID 54467)</li>
+    <li><strong>Component</strong>: Issue area (e.g., Clearing, FX)</li>
+    <li><strong>key</strong>: Issue key (e.g., CAL-490160)</li>
+  </ul>
+
+  <h2>2. Operators</h2>
+  <ul>
+    <li><code>=</code>: Equals</li>
+    <li><code>in</code>: Matches values in a list</li>
+    <li><code>AND</code>: Combines conditions</li>
+    <li><code>ORDER BY</code>: Sorts the results</li>
+  </ul>
+
+  <h2>3. Reserved Characters and Words</h2>
+  <ul>
+    <li><code>()</code>: Group values</li>
+    <li><code>""</code>: Multi-word terms</li>
+    <li><code>ASC</code> / <code>DESC</code>: Sorting order</li>
+  </ul>
+
+  <h2>4. Term Modifiers</h2>
+  <ul>
+    <li><code>AND</code>: Both must be true</li>
+    <li><code>in</code>: Match from a list</li>
+  </ul>
+
+  <h2>5. Functions</h2>
+  <p>No direct functions, but <code>Filter = 54467</code> implies referencing a saved filter.</p>
+
+  <h2>Summary Table</h2>
+  <table>
+    <thead>
+      <tr><th>Component</th><th>Explanation</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fields</td>
+        <td>
+          <ul>
+            <li>Filter: Predefined search</li>
+            <li>Component: Project section</li>
+            <li>key: Unique issue ID</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Operators</td>
+        <td>
+          <ul>
+            <li>=, in, AND, ORDER BY</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Reserved Characters</td>
+        <td>() for grouping, "" for values, ASC/DESC for order</td>
+      </tr>
+      <tr>
+        <td>Term Modifiers</td>
+        <td>AND / in for narrowing</td>
+      </tr>
+      <tr>
+        <td>Functions</td>
+        <td>No direct functions</td>
+      </tr>
+      <tr>
+        <td>Word Stemming</td>
+        <td>Not applied</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Indicator Legend</h2>
+  <table>
+    <thead>
+      <tr><th>Indicator</th><th>Meaning</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>✅ Green Tick</td>
+        <td>Valid Query</td>
+        <td>Syntactically correct, ready to run</td>
+      </tr>
+      <tr>
+        <td>❌ Red Error</td>
+        <td>Invalid Query</td>
+        <td>Contains a syntax or logic error</td>
+      </tr>
+      <tr>
+        <td>⚠️ Warning Icon</td>
+        <td>Potential Issue</td>
+        <td>Valid but might return unintended results</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Detailed JQL Explanation</h2>
+  <h3>Fields (sample list)</h3>
+  <p>Used to filter/search for issues:</p>
+  <p>Assignee, Affected version, Attachments, Comment, Component, Created, Description, Due, Filter, Fix version, Issue key, Labels, Priority, Project, Reporter, Sprint, Status, Summary, Time spent, Watcher</p>
+
+  <h3>Operators</h3>
+  <p>=, >, >=, ~, in, is, was, changed, !=, <, <=, !~, not in, is not</p>
+
+  <h3>Functions</h3>
+  <ul>
+    <li><strong>Time</strong>: startOfDay(), endOfMonth(), now()</li>
+    <li><strong>People</strong>: currentUser(), membersOf()</li>
+    <li><strong>Issue</strong>: issueHistory(), openSprints(), watchedIssues()</li>
+  </ul>
+
+  <h3>Reserved Characters</h3>
+  <p>" ", +, ., ,, ;, ?, `, *, /, %, ^, $, #, @, [, ]</p>
+
+  <h3>Reserved Words</h3>
+  <p>a, and, as, at, be, but, by, for, if, in, into, is, it, no, not, of, on, or, such, the, their, this, to, was, will, with</p>
+
+  <h3>Term Modifiers</h3>
+  <ul>
+    <li>Wildcard <code>?</code>: Single character (e.g. <code>te?t</code>)</li>
+    <li>Wildcard <code>*</code>: Multiple characters (e.g. <code>win*</code>)</li>
+    <li>Proximity: <code>"Atlassian jira"~10</code></li>
+    <li>Fuzzy: <code>roam~</code></li>
+    <li>Boost: <code>atlassian^4 jira</code></li>
+  </ul>
+
+  <p><strong>Learn more:</strong> <a href="https://docs.atlassian.com/advanced-searching" target="_blank">Atlassian Advanced Searching Docs</a></p>
+
+</body>
+</html>
