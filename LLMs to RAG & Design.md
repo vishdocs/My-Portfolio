@@ -118,7 +118,7 @@ This improves response accuracy and reduces hallucinations because the model use
 4. The query and retrieved context are sent to an LLM.
 5. Final response is returned to user.
 
-## LLMs vs RAG (Tabular View)
+## LLMs vs RAG
 
 | Feature      | LLMs                              | RAGs                                         |
 |-------------|------------------------------------|----------------------------------------------|
