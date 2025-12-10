@@ -237,7 +237,8 @@ Prompt engineering is the practice of designing and optimizing input prompts so 
 
 ---
 
-## Agents: Observe → Reason → Plan → Act
+## Agents
+Observe → Reason → Plan → Act
 
 Agents are systems that perceive, reason, and act autonomously.  
 An AI agent is an autonomous software system that perceives its environment, makes decisions, and performs actions with minimal human intervention.
