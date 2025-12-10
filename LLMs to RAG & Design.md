@@ -1,5 +1,3 @@
-# From LLMs to RAG & Agents
-
 ## Agenda
 
 - Introduction  
